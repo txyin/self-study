@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年倒计时</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-top: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .countdown-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .countdown {
+            font-size: 48px;
+            margin: 20px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>新年倒计时</h1>
+
+    <!-- 图文内容部分 -->
+    <div class="content">
+        <h2>祝您新年快乐！</h2>
+        <img src="https://example.com/your-image.jpg" alt="新年祝福">
+        <p>让我们一起倒数，迎接2024年！这里是一个展示新年祝福和图文内容的部分，您可以添加更多的文字和图片。</p>
+        <p>例如：新的一年，新的开始，祝您事事顺心，健康快乐！</p>
+    </div>
+
+    <!-- 倒计时部分 -->
+    <div class="countdown-section">
+        <h2>距离2024年新年还有</h2>
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var targetDate = new Date("2024-01-01T00:00:00");  // 设置目标时间为2024年1月1日0点
+            var timeDiff = targetDate - now;
+
+            if (timeDiff <= 0) {
+                document.getElementById("countdown").innerHTML = "新年快乐！";
+                return;
+            }
+
+            var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+        }
+
+        setInterval(updateCountdown, 1000); // 每秒更新一次倒计时
+    </script>
+</body>
+</html>
