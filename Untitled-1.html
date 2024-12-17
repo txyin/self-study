@@ -1,0 +1,183 @@
+<!DOCTYPE html> 
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFU</title>
+    <style>
+       
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: left; 
+            color: #333; 
+            font-size: 30px; 
+            font-family: 'times new roman', sans-serif; 
+            margin-top: 0px; 
+            margin-bottom: 0px; 
+        }
+		h3 {
+			text-align: middle; 
+            color: #333; 
+            font-size: 36px; 
+            font-family: 'arial', sans-serif; 
+            margin-top: 0px; 
+            margin-bottom: 0px;
+		}
+        .content {
+            margin-top: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .countdown-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .time {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .time span {
+            margin: 0 20px;
+            text-align: center;
+        }
+        .time span div {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(to right, red, orange); /* 红橙渐变 */
+            -webkit-background-clip: text; /* 应用背景到文字 */
+            -webkit-text-fill-color: transparent; /* 设置文字为透明，显示背景 */
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Welcome to NFU</h1>
+    
+    <!-- 图文内容部分 -->
+    <div class="content">
+        <h2>Hi there,</h2>
+        <p style="text-align: left;font-family: 'times new roman', sans-serif;font-size: 28px;">Wish you have a lovely day in NFU.</p>
+        <p style="text-align: left;font-family: 'times new roman', sans-serif;font-size: 28px;">Here are more details of failure modes in specimens:</p>
+        <img src="https://example.com/your-image.jpg" alt="新年祝福">
+        <p>让我们一起倒数，迎接2024年！这里是一个展示新年祝福和图文内容的部分，您可以添加更多的文字和图片。</p>
+        <p>例如：新的一年，新的开始，祝您事事顺心，健康快乐！</p>
+    </div>
+
+    <!-- 倒计时部分 -->
+    <div class="countdown-section">
+    <h3 style="font-family: 'Arial', sans-serif; font-size: 36px; color: #ff6347; text-align: center; margin-bottom: 10px;">
+        Ready to meet the NEW YEAR?
+    </h3>
+    <p style="line-height: 2; font-size: 28px; text-align: center;">
+    <strong>Countdown to <span style="font-size: 2.5rem; font-weight: bold; background: linear-gradient(120deg, #ff6e7f, #bfe9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: flowEffect 2s infinite;">2025</span>:</strong></p>
+
+<style>
+    @keyframes flowEffect {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+</style>
+
+        <div class="time">
+            <span>
+            <div id="d">00</div>
+                Days
+          </span>
+            <span>
+                <div id="h">00</div>
+                Hours
+            </span>
+            <span>
+                <div id="m">00</div>
+                Minutes
+            </span>
+            <span>
+                <div id="s">00</div>
+                Seconds
+            </span>
+      </div>
+    </div>
+
+<script>
+    // 定义目标时间（北京时间）
+    const targetDate = new Date("2025-01-01T00:00:00"); // 设置为北京时间
+
+    // 获取 HTML 中倒计时元素
+    const d = document.getElementById("d");
+    const h = document.getElementById("h");
+    const m = document.getElementById("m");
+    const s = document.getElementById("s");
+
+    function updateCountdown() {
+        // 获取当前时间（浏览器本地时间）
+        const now = new Date();
+
+        // 将当前时间转换为北京时间（UTC+8）
+        const nowUTC8 = new Date(now.getTime() + (now.getTimezoneOffset() + 480) * 60000); // 时区偏移+8小时
+
+        // 计算目标时间与当前时间的差值
+        const timeDiff = targetDate - nowUTC8;
+
+        if (timeDiff <= 0) {
+            d.innerHTML = "00";
+            h.innerHTML = "00";
+            m.innerHTML = "00";
+            s.innerHTML = "00";
+            return;
+        }
+
+        // 计算天、时、分、秒
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        // 更新倒计时显示
+        d.innerHTML = formatNumber(days);
+        h.innerHTML = formatNumber(hours);
+        m.innerHTML = formatNumber(minutes);
+        s.innerHTML = formatNumber(seconds);
+    }
+
+    // 格式化数字，确保两位显示
+    function formatNumber(num) {
+        return num < 10 ? "0" + num : num;
+    }
+
+    // 每秒更新倒计时
+    setInterval(updateCountdown, 1000);
+</script>+
+</body>
+</html>
