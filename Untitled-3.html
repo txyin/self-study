@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFU Countdown</title>
+    <style>
+        /* 全局样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%; /* 保证页面最小高度为100% */
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: left;
+            color: #333;
+            font-size: 30px;
+            font-family: 'times new roman', sans-serif;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        h3 {
+            color: #333;
+            font-size: 36px;
+            font-family: 'arial', sans-serif;
+            margin: 0;
+        }
+        .content {
+            margin-top: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .countdown-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .time {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .time span {
+            margin: 0 5px;
+            text-align: center;
+        }
+        .time span div {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, red, orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .highlight1 {
+            color: red;
+        }
+        /* 动画 */
+        @keyframes flowEffect {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .highlight1 span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(120deg, #ff6e7f, #bfe9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flowEffect 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to NFU</h1>
+    
+    <!-- 图文内容部分 -->
+    <div class="content">
+        <h2>Hi there,</h2>
+        <p style="text-align: left; font-family: 'times new roman', sans-serif; font-size: 28px;">
+            Wish you have a lovely day in NFU.
+        </p>
+        <p style="text-align: left; font-family: 'times new roman', sans-serif; font-size: 28px;">
+            Here are more details of failure modes in specimens:
+        </p>
+        <div class="image-container">
+            <img src="image-a.jpg" alt="Failure Mode (a)">
+            <img src="image-b.jpg" alt="Failure Mode (b)">
+            <img src="image-c.jpg" alt="Failure Mode (c)">
+        </div>
+        <p>All the best,</p>
+        <p>Tianxiao Yin</p>
+    </div>
+
+  <!-- 倒计时部分 -->
+<div class="countdown-section" style="background: linear-gradient(to bottom, #ffffff, #f0f8ff); padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+    <h3 style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-align: center; margin-bottom: 20px;
+        background: linear-gradient(to right, #00e0ff, #ff8c00, #ff1493); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+        Do you know?
+    </h3>
+    <p style="line-height: 1.8; font-size: 28px; text-align: center; font-family: 'Arial', sans-serif; 
+        background: linear-gradient(to right, #8fcfd1, #b3e1e4); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; margin-bottom: 8px;">
+        <strong>There is only</strong>
+    </p>
+
+    <div class="time" style="display: flex; justify-content: center;  margin-top: 8px;">
+        <span>
+        <div id="d" style="font-size: 2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+        <span style="font-size: 0.6rem;">Days</span>
+        </span>
+        <span>
+        <div id="h" style="font-size: 2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.6rem;">Hours</span>
+        </span>
+        <span>
+        <div id="m" style="font-size: 2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.6rem;">Minutes</span>
+        </span>
+        <span>
+        <div id="s" style="font-size: 2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.6rem;">Seconds</span>
+        </span>
+        <span style="font-size: 28px; font-weight: bold; align-self: center; background: linear-gradient(to right, #8fcfd1, #b3e1e4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: none;">
+            left
+        </span>
+    </div>
+
+    <p style="line-height: 1.5; font-size: 28px; text-align: center; font-family: 'Arial', sans-serif; margin-top: 8px; 
+        background: linear-gradient(to right, #8fcfd1, #b3e1e4); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;">
+        <strong>towards</strong> 
+        <span style="font-size: 2.5rem; font-weight: bold; background: linear-gradient(120deg, #ff6e7f, #bfe9ff); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: flowEffect 2s infinite;">
+            2025&nbsp;
+        </span>!
+    </p>
+<p style="line-height: 1.5; font-size: 32px; text-align: center; font-family: 'Arial', sans-serif; margin-top: 10px; 
+    color: #555;">
+    <strong>Ready to meet the&nbsp;</strong>
+</p>
+<p style="line-height: 1.5; font-size: 48px; text-align: center; font-family: 'Arial Black', sans-serif; font-weight: bold; margin-top: 0px; 
+    background: linear-gradient(90deg, #ff4e50, #f9d423, #42e695, #4776e6, #8e44ad); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);">
+    NEW YEAR!
+</p>
+
+
+
+
+
+
+
+
+    <script>
+        // 定义目标时间（北京时间）
+        const targetDate = new Date("2025-01-01T00:00:00");
+
+        // 获取 HTML 中倒计时元素
+        const d = document.getElementById("d");
+        const h = document.getElementById("h");
+        const m = document.getElementById("m");
+        const s = document.getElementById("s");
+
+        function updateCountdown() {
+            const now = new Date();
+            const nowUTC8 = new Date(now.getTime() + (now.getTimezoneOffset() + 480) * 60000);
+            const timeDiff = targetDate - nowUTC8;
+
+            if (timeDiff <= 0) {
+                d.innerHTML = "00";
+                h.innerHTML = "00";
+                m.innerHTML = "00";
+                s.innerHTML = "00";
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            d.innerHTML = formatNumber(days);
+            h.innerHTML = formatNumber(hours);
+            m.innerHTML = formatNumber(minutes);
+            s.innerHTML = formatNumber(seconds);
+        }
+
+        function formatNumber(num) {
+            return num < 10 ? "0" + num : num;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
