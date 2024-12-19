@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFU Forum</title>
+    <style>
+        /* 全局样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%; /* 保证页面最小高度为100% */
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: left;
+            color: #333;
+            font-size: 26px;
+            font-family: 'arial', sans-serif;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        h3 {
+            color: #333;
+            font-size: 36px;
+            font-family: 'arial', sans-serif;
+            margin: 0;
+        }
+        .content {
+            margin-top: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .image-container {
+    		display: flex;
+    		flex-wrap: wrap;
+    		gap: 25px; /* 间距 */
+    		justify-content: center; /* 水平居中 */
+		}
+
+		.image-container img {
+    		width: 45%; /* 每行 2 个，计算宽度为 100% / 2 - 间距 */
+    		height: auto; /* 保持宽高比 */
+    		border-radius: 5px; /* 可选：圆角 */
+    		object-fit: cover; /* 裁剪适应 */
+		}
+
+        .countdown-section {
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			max-width: 800px;
+            
+        }
+        .time {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .time span {
+            margin: 0 6px;
+            text-align: center;
+        }
+        .time span div {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, red, orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .highlight1 {
+            color: red;
+        }
+        /* 动画 */
+        @keyframes flowEffect {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .highlight1 span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(120deg, #ff6e7f, #bfe9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flowEffect 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Poster</h1>
+    
+    <!-- 图文内容部分 -->
+    <div class="content">
+        <h2>Hi there,</h2>
+        <p style="text-align: left; font-family: 'arial', sans-serif; font-size: 20px;">
+            Wish you have a splendid day at NFU.
+      </p>
+        <p style="text-align: left; font-family: 'arial', sans-serif; font-size: 20px;">
+      Here are more details regarding&nbsp;the failure of specimens:</p>
+        <div class="image-container">
+            <img src="https://thumbnail0.baidupcs.com/thumbnail/f72566416s27cb9483a6ec32a2ffed5e?fid=2359298578-250528-117640358060992&time=1734566400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-IARKegKoVYnbXMccUmlDkQbYfaI%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=124475453817023382&dp-callid=0&file_type=0&size=c1920_u1080&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="LS8H">
+           <img src="https://thumbnail0.baidupcs.com/thumbnail/4178dd483od3a4c5f1f1d6fbfbc06205?fid=2359298578-250528-1095159119880605&time=1734534000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-48%2FIJIMgC68dXbm6%2B9MadqKed5A%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=116518726735247947&dp-callid=0&file_type=0&size=c1707_u1067&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="LS8I">
+		   <img src="https://thumbnail0.baidupcs.com/thumbnail/643928dbeqaca22ec80e6223f43b3724?fid=2359298578-250528-455606171018524&time=1734566400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-UHXhqVdrfBT0EotgdVOcWcODGV4%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=124475453817023382&dp-callid=0&file_type=0&size=c1920_u1080&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="LS10H">
+		   <img src="https://thumbnail0.baidupcs.com/thumbnail/5dafbbdffhe42c37bcce801f6714829e?fid=2359298578-250528-470147758498128&time=1734566400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-vI%2FQDYGhZ%2FeA4cwTbZbKvw1Wy9g%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=124475453817023382&dp-callid=0&file_type=0&size=c1920_u1080&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="LS10I">
+	       <img src="https://thumbnail0.baidupcs.com/thumbnail/6662ddd16r40009dc653756214d3b74b?fid=2359298578-250528-255612423934975&time=1734566400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-SQsx1B5JcQPR8nIty3ljanX%2FIsg%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=124475453817023382&dp-callid=0&file_type=0&size=c1920_u1080&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="BS8H">
+		   <img src="https://thumbnail0.baidupcs.com/thumbnail/c255c650cq4d5dc4973e8497105c640a?fid=2359298578-250528-208828729870573&time=1734534000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-W%2FwS2epw%2FzYIRPA1nrSauQty6x0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=116518726735247947&dp-callid=0&file_type=0&size=c1707_u1067&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="BS8I">
+		   <img src="https://thumbnail0.baidupcs.com/thumbnail/16f4e6129la2368f0a7b4a3b8047889e?fid=2359298578-250528-497959896025543&time=1734534000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-KN%2FK4INRoV6Au5QQ%2BnUcrBuh1lM%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=116518726735247947&dp-callid=0&file_type=0&size=c1707_u1067&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="BS10H">
+		   <img src="https://thumbnail0.baidupcs.com/thumbnail/83c6cc18du2a0415fa1c409ddc870cbc?fid=2359298578-250528-168077356918891&time=1734534000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-t1FXARDuDU%2B5X4uoyiN91MhP9h4%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=116518726735247947&dp-callid=0&file_type=0&size=c1707_u1067&quality=90&vuk=-&ft=video&autopolicy=1.jpg" alt="BS10I">
+	  </div>
+	  <p style="text-align: left; font-family: 'arial', sans-serif; font-size: 20px;"> 
+	    Please feel free to contact us with any further questions via 
+	    <span style="font-family: 'Times New Roman', serif; font-style: oblique; font-weight: bold;  text-decoration: underline;">
+		  t.yin@ed.ac.uk</span>.</p>
+        <p style="text-align: left; font-family: 'arial', sans-serif; font-size: 20px;">All the best,</p>
+      <p style="text-align: left; font-family: 'arial', sans-serif; font-size: 20px;">Tianxiao Yin</p>
+     
+    </div>
+
+<!-- 倒计时部分 -->
+<div class="countdown-section" style="background: linear-gradient(to bottom, #ffffff, #f0f8ff); padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+<h3 style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-align: center; margin-bottom: 20px;
+        background: linear-gradient(to right, #00e0ff, #ff8c00, #ff1493); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+    Do you know？ </h3>
+    <p style="line-height: 1.8; font-size: 28px; text-align: center; font-family: 'Arial', sans-serif; 
+        background: linear-gradient(to right, #8fcfd1, #b3e1e4); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; margin-bottom: 8px;">
+        <strong>There are only</strong>
+    </p>
+
+    <div class="time" style="display: flex; justify-content: center;  margin-top: 8px;">
+        <span>
+        <div id="d" style="font-size: 2.2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+        <span style="font-size: 0.8rem;">Days</span>
+      </span>
+        <span>
+        <div id="h" style="font-size: 2.2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.8rem;">Hours</span>
+        </span>
+        <span>
+        <div id="m" style="font-size: 2.2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.8rem;">Minutes</span>
+        </span>
+        <span>
+        <div id="s" style="font-size: 2.2rem; font-weight: bold; background: linear-gradient(to right, red, orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00</div>
+            <span style="font-size: 0.8rem;">Seconds</span>
+        </span>
+        <span style="font-size: 28px; font-weight: bold; align-self: center; background: linear-gradient(to right, #8fcfd1, #b3e1e4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: none;">
+            left
+        </span>
+	</div>
+
+    <p style="line-height: 1.5; font-size: 28px; text-align: center; font-family: 'Arial', sans-serif; margin-top: 8px; 
+        background: linear-gradient(to right, #8fcfd1, #b3e1e4); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;">
+        <strong>towards</strong> 
+        <span style="font-size: 2.5rem; font-weight: bold; background: linear-gradient(120deg, #ff6e7f, #bfe9ff); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: flowEffect 2s infinite;">
+        2025
+    </span><strong>! </strong>
+    </p>
+<p style="line-height: 1.5; font-size: 32px; text-align: center; font-family: 'Arial', sans-serif; margin: 8px; 
+    color: #8aa6c1;  /* 淡化后的雾霾蓝 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15), 0 0 3px rgba(138, 166, 193, 0.3);  /* 更轻的阴影效果 */
+    font-weight: bold;">
+    <strong>Ready to meet the&nbsp;</strong>
+</p>
+
+
+
+<p style="line-height: 1.5; font-size: 48px; text-align: center; font-family: 'Arial Black', sans-serif; font-weight: bold; margin-top: 0px; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: #ff6633;  /* 橘红色 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                 0 0 10px rgba(255, 153, 51, 0.75),  /* 增加红色渐变的深色阴影 */
+                 0 0 20px rgba(255, 153, 51, 0.6),  /* 增加红色渐变的中度阴影 */
+                 0 0 30px rgba(255, 153, 51, 0.45),  /* 增加红色渐变的高亮阴影 */
+                 0 0 40px rgba(255, 153, 51, 0.3),  /* 增加红色渐变的更强阴影 */
+                 0 0 50px rgba(255, 153, 51, 0.2);  /* 增加红色渐变的最外阴影 */">
+    NEW YEAR!
+</p>
+</div>
+    <script>
+        // 定义目标时间（北京时间）
+        const targetDate = new Date("2025-01-01T00:00:00");
+
+        // 获取 HTML 中倒计时元素
+        const d = document.getElementById("d");
+        const h = document.getElementById("h");
+        const m = document.getElementById("m");
+        const s = document.getElementById("s");
+
+        function updateCountdown() {
+            const now = new Date();
+            const nowUTC8 = new Date(now.getTime() + (now.getTimezoneOffset() + 480) * 60000);
+            const timeDiff = targetDate - nowUTC8;
+
+            if (timeDiff <= 0) {
+                d.innerHTML = "00";
+                h.innerHTML = "00";
+                m.innerHTML = "00";
+                s.innerHTML = "00";
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            d.innerHTML = formatNumber(days);
+            h.innerHTML = formatNumber(hours);
+            m.innerHTML = formatNumber(minutes);
+            s.innerHTML = formatNumber(seconds);
+        }
+
+        function formatNumber(num) {
+            return num < 10 ? "0" + num : num;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
